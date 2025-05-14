@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account - ScheduleEase</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #ffffff;
+      padding: 40px;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+      text-decoration: none;
+      color: black;
+      border: 2px solid black;
+      border-radius: 50%;
+      padding: 4px 10px;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 60px;
+      font-family: cursive;
+      font-size: 24px;
+    }
+
+    .create-container {
+      max-width: 400px;
+      margin: 120px auto 0;
+      text-align: center;
+    }
+
+    .create-container h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .create-container input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+    }
+
+    .subtext {
+      font-size: 12px;
+      color: gray;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .create-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #4da7ff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .create-btn:hover {
+      background-color: #1a85e8;
+    }
+
+    .legal {
+      font-size: 12px;
+      color: gray;
+    }
+
+    .legal a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .legal a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <a href="login.html" class="back-button">←</a>
+  <div class="logo">ScheduleEase</div>
+
+  <div class="create-container">
+    <h2>Create an Schedule Ease Account</h2>
+    
+    <label for="email" style="text-align:left; display:block;">Email</label>
+    <input type="email" id="email" placeholder="">
+
+    <label for="phone" style="text-align:left; display:block;">Phone <span style="color:gray;">(recommended)</span></label>
+    <input type="tel" id="phone" placeholder="">
+    <div class="subtext">Standard call, message or data rates may apply.</div>
+
+    <label for="password" style="text-align:left; display:block;">Password</label>
+    <input type="password" id="password" placeholder="">
+
+    <button class="create-btn">Create Account</button>
+
+    <div class="legal">
+      By selecting Create account, you agree to our <a href="#">Terms</a> and have read and acknowledge our <a href="#">Global Privacy Statement</a>.
+    </div>
+  </div>
+  <script>
+  document.querySelector(".create-btn").addEventListener("click", () => {
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+      alert("Please enter at least Email and Password.");
+      return;
+    }
+
+    const accountData = {
+      email,
+      phone,
+      password
+    };
+
+    // Save account to localStorage
+    localStorage.setItem("scheduleEaseUser", JSON.stringify(accountData));
+
+    alert("Account created successfully!");
+
+    // Optionally redirect to login or homepage
+    window.location.href = "login.html"; 
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,866 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .navbar {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    font-family: cursive;
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  .nav-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .content {
+    margin-top: 40px;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+  }
+  
+  footer {
+    margin-top: 40px;
+  }
+
+ button.secondary {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+  
+  .store-btn {
+    width: 150px;
+    margin: 10px;
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .phone-icon {
+    font-size: 100px;
+    margin-top: 20px;
+  }
+  .app-page {
+    padding: 20px;
+  }
+  
+  .back-button {
+    font-size: 24px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  
+  .app-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  
+  .app-text {
+    max-width: 300px;
+    font-size: 14px;
+  }
+  
+  .logo {
+    font-family: cursive;
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    display: block;
+    color: black;
+  }
+  
+  .app-text p {
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+  }
+  
+  .store-buttons img {
+    width: 140px;
+    margin-right: 8px;
+    margin-top: 10px;
+  }
+  
+  .app-phone .phone-outline {
+    width: 130px;
+    height: 260px;
+    border: 10px solid black;
+    border-radius: 25px;
+    position: relative;
+  }
+  
+  .phone-outline::before {
+    content: "";
+    width: 50px;
+    height: 8px;
+    background: black;
+    border-radius: 4px;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .phone-outline::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+  }
+  .main-section {
+    text-align: left;
+    max-width: 600px;
+    margin: 100px auto 0 auto;
+    padding: 0 20px;
+  }
+  
+  .main-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .main-section p {
+    margin-bottom: 20px;
+    font-size: 1em;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .language-selector {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: black;
+  }
+.scheduler-page {
+  padding: 20px;
+}
+
+.scheduler-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.scheduler-header .logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.scheduler-header .subtitle {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.scheduler-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.schedule-btn, .plus-btn {
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.schedule-btn:hover, .plus-btn:hover {
+  background-color: #2980b9;
+}
+
+.add-class-btn {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-class-btn:hover {
+  background-color: #2980b9;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th, .schedule-table td {
+  border: 1px solid #ccc;
+  padding: 1em;
+  text-align: center;
+}
+
+.schedule-table th {
+  background-color: #f0f0f0;
+}
+
+.schedule-table td[contenteditable="true"] {
+  background-color: #f5f5f5; /* Light background to indicate it's editable */
+  border: 2px solid #ccc;
+  cursor: text; /* Show a text cursor when hovering */
+}
+
+.schedule-table td[contenteditable="true"]:empty:before {
+  content: "Click to add class"; /* Placeholder text when the cell is empty */
+  color: #aaa;
+}
+
+.schedule-table td:focus {
+  outline: 2px solid #000;
+}
+
+.class-helper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.helper-box {
+  margin-bottom: 10px;
+}
+
+.search-box input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+  
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .add-class-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+  
+  .add-class-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-class-tip {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    z-index: 1;
+    min-width: 160px;
+  }
+
+  .dropdown-content a {
+    padding: 8px 12px;
+    display: block;
+    color: black;
+    text-decoration: none;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f0f0f0;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .add-class-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .class-input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .color-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .create-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+  }
+
+  .email-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.email-section input {
+  width: 250px;
+  padding: 8px;
+  margin-bottom: 4px;
+}
+
+.email-section small {
+  color: gray;
+  font-size: 12px;
+}
+
+.provider-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.provider-button {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  background-color: rgb(23, 132, 234);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.provider-button:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #000000; /* Or your original color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.nav-button:hover {
+  background-color: #000000;
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for the whole page */
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Sidebar with back button */
+.sidebar {
+    width: 25%;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #4A4A4A;
+}
+
+.sidebar .back-btn {
+    text-decoration: none;
+    font-size: 20px;
+    color: #252C74;
+    margin-bottom: 20px;
+}
+
+.sidebar h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 36px;
+    color: #252C74;
+}
+
+.sidebar p {
+    font-size: 16px;
+    color: #252C74;
+}
+
+/* Form container */
+.form-container {
+    width: 75%;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.form-container h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 32px;
+    color: #252C74;
+    margin-bottom: 20px;
+}
+
+textarea, input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+button {
+    background-color: #252C74;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #194EAF;
+}
+
+/* General Body and Layout Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+}
+
+/* Contact Us Page Section */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px;
+    background-color: white;
+}
+
+/* Title and Subtitle */
+.contact-section h1 {
+    font-size: 36px;
+    color: #252C74;
+    margin-bottom: 10px;
+    text-align: center; /* Align title to the left */
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center; /* Align subtitle to the left */
+}
+
+/* Contact Us Message Section */
+.contact-message {
+    background-color: #E6E6FA; /* Lavender */
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #252C74;
+    width: 45%; /* Adjust width */
+    margin-right: 20px;
+    text-align: left;
+}
+
+/* Contact Form on the Right */
+.contact-form {
+    background-color: #E6E6FA; /* Lavender */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 45%; /* Adjust width */
+}
+
+/* Form Heading */
+.contact-form h2 {
+    font-size: 28px;
+    color: #252C74;
+    margin-bottom: 20px;
+}
+
+/* Label Styling */
+.contact-form label {
+    display: block;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #252C74;
+}
+
+/* Textarea Styling */
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    resize: vertical;
+}
+
+/* Send Button */
+.contact-form .send-btn {
+    background-color: #252C74;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact-form .send-btn:hover {
+    background-color: #1e2340;
+}
+
+/* Back Button */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: #252C74;
+}
+
+.templates-page {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.templates-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  padding: 0.5rem;
+  width: 300px;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+   text-align: center;
+}
+
+.template-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.template-card {
+ flex: 1 1 30%;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.template-card:hover {
+  transform: scale(1.02);
+}
+
+.template-card h2 {
+  margin-top: 0;
+}
+
+.template-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.header-row h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.search-box {
+  width: 300px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 2px solid #333;
+  margin-top: 10px;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.navbar-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.container h1 {
+  font-size: 45px
+}
+
+.container p {
+  font-size: 35px
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+header p {
+    font-size: 1rem;
+    color: #777;
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 150px;
+    width: 100%;
+}
+
+.task-column {
+    width: 30%; /* Equal width for each column */
+    background-color: white;
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    transition: background-color 0.3s ease;
+}
+
+.task-column:hover {
+    background-color: #f7f7f7; /* Hover effect */
+}
+
+h2 {
+    font-size: 1.3rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+button.new-task {
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%; /* Full width */
+    max-width: 160px;
+}
+
+button.new-task:hover {
+    background-color: #2980b9;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 100%;
+}
+
+li {
+    padding: 12px;
+    background-color: #ecf0f1;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#not-started {
+    background-color: #f0f0f0;
+}
+
+#in-progress {
+    background-color: #dbe8f4;
+}
+
+#done {
+    background-color: #e6f9e6;
+}
+
+/* Add to your existing CSS */
+
+.thank-you-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.thank-you-message {
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    max-width: 500px;
+}
+
+.thank-you-message h2 {
+    color: #2c3e50;
+}
+
+.thank-you-message p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.thank-you-action {
+    margin-top: 20px;
+}
+
+.go-home-btn {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.go-home-btn:hover {
+    background-color: #2980b9;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+    }
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+      text-decoration: none;
+      color: black;
+      border: 2px solid black;
+      border-radius: 50%;
+      padding: 4px 10px;
+    }
+    h2 {
+      margin-top: 60px;
+      margin-bottom: 30px;
+    }
+    .class-list {
+      margin: 20px auto;
+      padding: 20px;
+      width: 60%;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      text-align: left;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .class-item {
+      padding: 15px;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .class-item .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .class-item .value {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    .remove-btn {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .remove-btn:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+  <a href="scheduler.html" class="back-button">←</a>
+  <h2>Class Details</h2>
+
+  <div class="class-list" id="class-list">
+    <!-- Class details will be displayed here -->
+  </div>
+
+  <script>
+    // Fetch class data from localStorage
+    window.onload = function() {
+      const classes = JSON.parse(localStorage.getItem('classes')) || [];
+      const classListContainer = document.getElementById('class-list');
+
+      if (classes.length > 0) {
+        classes.forEach((classData, index) => {
+          // Create a div for each class and display its data
+          const classElement = document.createElement('div');
+          classElement.classList.add('class-item');
+          
+          // Apply the color to the background
+          classElement.style.backgroundColor = classData.color;
+          
+          classElement.innerHTML = `
+            <div class="title">${classData.className}</div>
+            <div class="value">Time: ${classData.time}</div>
+            <div class="value">Instructor: ${classData.instructor}</div>
+            <button class="remove-btn" onclick="removeClass(${index})">Remove Class</button>
+          `;
+          
+          classListContainer.appendChild(classElement); // Append the new class element
+        });
+      } else {
+        // If no classes are found, display a message
+        classListContainer.innerHTML = "<p>No classes found in storage.</p>";
+      }
+    };
+
+    // Remove class from localStorage
+    function removeClass(index) {
+      // Get the classes from localStorage
+      const classes = JSON.parse(localStorage.getItem('classes')) || [];
+
+      // Remove the class at the specified index
+      classes.splice(index, 1);
+
+      // Save the updated classes array back to localStorage
+      localStorage.setItem('classes', JSON.stringify(classes));
+
+      // Reload the page to reflect the changes
+      window.location.reload();
+    }
+  </script>
+</body>
+</html>

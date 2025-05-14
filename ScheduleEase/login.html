@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - ScheduleEase</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #ffffff;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+      text-decoration: none;
+      color: black;
+      border: 2px solid black;
+      border-radius: 50%;
+      padding: 4px 10px;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 60px;
+      font-family: cursive;
+      font-size: 24px;
+    }
+
+    .login-container {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .login-container h2 {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .login-container p {
+      color: gray;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .login-button,
+    .auth-button {
+      display: block;
+      margin: 10px auto;
+      width: 250px;
+      padding: 10px;
+      border: 1px solid black;
+      background: white;
+      cursor: pointer;
+    }
+
+    .login-button.blue {
+      background: #007bff;
+      color: white;
+      border: none;
+    }
+
+    .login-button.blue:hover {
+      background: #0056b3;
+    }
+
+    .email-input {
+      width: 250px;
+      padding: 8px;
+      margin: 15px auto 5px;
+      display: block;
+      border: 1px solid #ccc;
+    }
+
+    .subtext {
+      font-size: 10px;
+      color: gray;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-button">←</a>
+  <div class="logo">ScheduleEase</div>
+
+  <div class="login-container">
+    <h2>Imagine it. Create it.</h2>
+    <p>Sign in to your Schedule Ease account.</p>
+
+    <div class="provider-buttons">
+    <button id="googleBtn" class="provider-button">Continue with Google</button>
+    <button id="appleBtn" class="provider-button">Continue with Apple</button>
+    <button id="microsoftBtn" class="provider-button">Continue with Microsoft</button>
+    </div> 
+
+    <div class="email-section">
+    <input type="email" id="emailInput" placeholder="Email" required />
+    <small>Use an organization email to create a professional account.</small>
+    </div>
+    
+    <button id="continueBtn" class="login-button blue">Continue</button>
+    <button class="login-button blue" onclick="window.location.href='create-account.html'">Create New Account</button>
+    <button id="exitBtn" class="login-button blue">Exit</button>
+  </div>
+  <script>
+  document.getElementById("continueBtn").addEventListener("click", function () {
+    const email = document.getElementById("emailInput").value.trim();
+
+    if (email === "") {
+      alert("Please enter your email to continue.");
+    } else {
+      // Save email to localStorage (optional)
+      localStorage.setItem("userEmail", email);
+
+      // Redirect to the next page
+      window.location.href = "scheduler.html"; // or whatever page you're going to
+    }
+  });
+</script>
+  <script>
+  document.getElementById("exitBtn").addEventListener("click", function () {
+    window.location.href = "index.html"; // Adjust if your homepage has a different filename
+  });
+</script>
+<script>
+  document.getElementById('googleBtn').addEventListener('click', () => {
+    alert("Google sign-in coming soon!");
+    // window.location.href = "google-login.html"; // optionally redirect
+  });
+
+  document.getElementById('appleBtn').addEventListener('click', () => {
+    alert("Apple sign-in coming soon!");
+  });
+
+  document.getElementById('microsoftBtn').addEventListener('click', () => {
+    alert("Microsoft sign-in coming soon!");
+  });
+</script>
+</body>
+</html>

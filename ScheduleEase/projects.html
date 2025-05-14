@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">Projects</a>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>Projects</h1>
+      <p>Manage and execute projects from start to finish</p>
+    </header>
+
+    <div class="task-container">
+      <div class="task-column" id="not-started">
+        <h2>Not Started</h2>
+        <button class="new-task">+ New Task</button>
+        <ul id="not-started-tasks"></ul>
+      </div>
+
+      <div class="task-column" id="in-progress">
+        <h2>In Progress</h2>
+        <button class="new-task">+ New Task</button>
+        <ul id="in-progress-tasks"></ul>
+      </div>
+
+      <div class="task-column" id="done">
+        <h2>Done</h2>
+        <button class="new-task">+ New Task</button>
+        <ul id="done-tasks"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

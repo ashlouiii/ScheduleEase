@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add New Class</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+    }
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+      text-decoration: none;
+      color: black;
+      border: 2px solid black;
+      border-radius: 50%;
+      padding: 4px 10px;
+    }
+    h2 {
+      margin-top: 60px;
+      margin-bottom: 30px;
+    }
+    .input-field {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 60%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #f5f5f5;
+    }
+    .color-options {
+      margin: 20px 0;
+    }
+    .color-circle {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin: 0 10px;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+    .color-circle.selected {
+      border: 2px solid black;
+    }
+    #create-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      background-color: #eee;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <a href="scheduler.html" class="back-button">←</a>
+  <h2>Add New Class</h2>
+  <input class="input-field" type="text" placeholder="Class Name" id="className" />
+  <input class="input-field" type="text" placeholder="Time" id="time" />
+  <input class="input-field" type="text" placeholder="Instructor" id="instructor" />
+
+  <div class="color-options">
+    <div class="color-circle" style="background-color: #f9fbb2;" data-color="#f9fbb2"></div>
+    <div class="color-circle" style="background-color: #d4f5a1;" data-color="#d4f5a1"></div>
+    <div class="color-circle" style="background-color: #d4dcf5;" data-color="#d4dcf5"></div>
+    <input type="color" id="customColor" class="color-circle" style="width: 34px; height: 34px; padding: 0;" />
+  </div>
+
+  <button id="create-btn">Create</button>
+
+  <script>
+    let selectedColor = null;
+
+    document.querySelectorAll('.color-circle').forEach(circle => {
+      circle.addEventListener('click', function () {
+        document.querySelectorAll('.color-circle').forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
+        selectedColor = this.dataset.color || this.value;
+      });
+    });
+
+    document.getElementById('customColor').addEventListener('input', function () {
+      selectedColor = this.value;
+    });
+
+    document.getElementById('create-btn').addEventListener('click', function () {
+      const className = document.getElementById('className').value;
+      const time = document.getElementById('time').value;
+      const instructor = document.getElementById('instructor').value;
+
+      if (!className || !time || !instructor || !selectedColor) {
+        alert("Please fill in all fields and choose a color.");
+        return;
+      }
+
+      // Prepare the class data object
+      const classData = {
+        className,
+        time,
+        instructor,
+        color: selectedColor
+      };
+
+      // Get the existing classes from localStorage, or initialize an empty array
+      let classes = JSON.parse(localStorage.getItem('classes')) || [];
+
+      // Add the new class to the array
+      classes.push(classData);
+
+      // Save the updated classes array back to localStorage
+      localStorage.setItem('classes', JSON.stringify(classes));
+
+      // Debugging line to check if class data is properly saved
+      console.log('Class Created:', classData); // Check the class data in the console
+
+      alert("Class created successfully!");
+      
+      // Redirect to the class-details.html page after creation
+      window.location.href = "class-details.html"; // Redirect to class-details.html
+    });
+  </script>
+</body>
+</html>

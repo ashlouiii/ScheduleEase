@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ScheduleEase</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="frame1">
+    <nav class="navbar">
+      <!-- Link to app.html -->
+      <a href="app.html" class="navbar-logo">ScheduleEase</a>
+      <div class="nav-links">
+        <button class="nav-button" id="appBtn">App</button>
+        <a href="scheduler.html">Scheduler</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="login-btn">Log In</a>
+
+      </div>
+    </nav>
+
+    <div class="main-section">
+        <h1><strong>A smarter way to <br>
+             schedule</strong></h1>
+        <p>Plan, organize, and stay on top of your tasks effortlessly.</p>
+        <div class="buttons">
+          <button id="getStartedBtn" class="your-existing-button-class">Get Started</button> 
+          <a href="templates.html"><button class="secondary">Templates</button></a>
+        </div>
+      </div>
+      
+    <footer>
+        <div class="language-selector">
+            🌐 English
+          </div>
+    </footer>
+  </div>
+  <script>
+  document.getElementById('appBtn').addEventListener('click', function () {
+    window.location.href = 'app.html';
+  });
+</script>
+<script>
+  document.getElementById('getStartedBtn').addEventListener('click', function () {
+    window.location.href = 'login.html';
+  });
+</script>
+
+</body>
+</html>
